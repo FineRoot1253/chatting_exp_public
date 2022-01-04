@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460661799457",
+    "project_id": "chat-88196",
+    "storage_bucket": "chat-88196.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460661799457:android:f8935f9d0a75a237a80160",
+        "android_client_info": {
+          "package_name": "com.reindeer.chatting_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460661799457-8rfps2mjl6bt78tgnhhumfv7b4q1q24a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4XlIn-kZJ_U0hiUO5jVW8NbuTG-TL_pM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460661799457-8rfps2mjl6bt78tgnhhumfv7b4q1q24a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
