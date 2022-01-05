@@ -1,6 +1,7 @@
 import 'package:chatting_example/controller/auth_controller.dart';
 import 'package:chatting_example/data/model/result_model.dart';
 import 'package:chatting_example/data/model/user_model.dart';
+import 'package:chatting_example/data/service/mqtt_wrapper.dart';
 import 'package:chatting_example/route/route_const.dart';
 import 'package:chatting_example/util/common_extension.dart';
 import 'package:chatting_example/util/common_util.dart';
@@ -106,12 +107,16 @@ class SignUpScreen extends StatelessWidget {
                                   this._controller.emailTextController.text,
                               passWord: _pwd,
                               confirmPassWord: _confirmPwd,
+                              userState: 1,
                               userFcmToken: fcmToken);
                           ResultModel result = await _controller.signUp(user);
 
                           _scaffoldMessengerKey.show(result.msg!);
                           debugPrint("${result.code}");
                           if (CommonUtils.checkResult(result)) {
+                            await MQTTClientWrapper()
+                                .connectClient(result.data['user_id']);
+
                             Get.offAllNamed(RouteName.Home,
                                 arguments: UserModel.fromJson(result.data));
                           }

@@ -51,6 +51,7 @@ class UserModel {
         "phone_number": phoneNumber,
         "birth_date": birthDate,
         "createat": createDate,
+        "user_fcm_token": userFcmToken
       };
 
   List<UserModel> listFromJson(List<dynamic> list) {

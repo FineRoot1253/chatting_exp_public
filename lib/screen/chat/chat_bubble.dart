@@ -106,12 +106,12 @@ class _ChatBubbleState extends State<ChatBubble> {
 
     ChatController.to.overlayEntry = OverlayEntry(
       builder: (_) => Positioned(
-        width: (size!.width) * 0.3 ?? 0,
+        width: (size?.width ?? 0) * 0.3,
         // height: (size?.width ?? 0) * 3,
         child: CompositedTransformFollower(
           link: ChatController.to.chatList[widget.index].layerLink,
           showWhenUnlinked: false,
-          offset: Offset((size!.width) * 0.65, (size?.height ?? 0) + 5.0),
+          offset: Offset((size?.width ?? 0) * 0.65, (size?.height ?? 0) + 5.0),
           child: Material(
             elevation: 4.0,
             child: TextButton(

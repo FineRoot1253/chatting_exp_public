@@ -121,6 +121,8 @@ class ChatController extends GetxController {
 
   /// 뒤로가기
   Future<void> userExit() async {
+    await Hive.box(HIVE_CHAT_LOG_BOX).put("$roomId", jsonEncode(mmm));
+
     ResultModel result = await repository
         .userExit(MemberModel(memberId: memberId, memberState: 1));
     if (CommonUtils.checkResult(result)) {

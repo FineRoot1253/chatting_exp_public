@@ -14,7 +14,7 @@ class SignInScreen extends StatelessWidget {
   SignInScreen({Key? key}) : super(key: key);
 
   final AuthController _controller = AuthController.to;
-  String _email = "a@a.com";
+  String _email = "b@b.com";
   String _pwd = "123321";
 
   final GlobalKey<ScaffoldMessengerState> _scaffoldMessengerKey =
@@ -45,6 +45,7 @@ class SignInScreen extends StatelessWidget {
                     onChanged: (value) {
                       this._email = value;
                     },
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(hintText: 'Email address'),
                   ),
                   TextField(
